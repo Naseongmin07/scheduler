@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    /*font-family: 'Noto Serif KR', serif;*/
+}
+a{
+    text-decoration: none;
+    color : rgb(102, 101, 101);
+}
+
+#cal_navi{
+    text-align: center;
+    font-size: 50px;
+    height: 150px;
+    padding: 30px 0 0 0;
+}
+#cal_navi>span{
+    display: inline-block;
+    width: 500px;
+}
+
+#cal_navi>span>span{
+    font-weight: 700;
+    font-size: 60px;
+}
+
+
+table{
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    /*border: 1px solid gray*/
+}
+
+
+#calander>:nth-child(1){
+    background: rgb(102, 101, 101);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#calander>tr
+{
+    height: 150px;
+    font-size: 20px;
+    font-weight: 500;
+    background: lightgrey;
+}
+
+#calander>tr>td>span{
+    height: 100%;
+    display: block;
+    text-align: right;
+    padding: 5px 6px 0 0;
+}
+
+#sun,
+#calander>tr>:nth-child(1)
+{
+    color: rgb(158, 19, 19);
+}
+#sat,
+#calander>tr>:nth-child(7)
+{
+    color: rgb(20, 20, 236);
+}

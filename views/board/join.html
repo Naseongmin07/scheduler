@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/join.css" rel="stylesheet">
+    <script src="/js/join.js"></script>
+    <title>Document</title>
+</head>
+<body style="background: #211510;">
+    <div id="body">
+        <div id="wrap">
+            <div id="space" style="height: 100px;"></div>
+            <div id="container">
+                <div id="title">
+                    <a href="../main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                </div>
+            </div>
+            <div id="container">
+                <div id="sub_title">
+                    <a style="color: #000;"><h2>Join Us!</h2></a>
+                </div>
+            </div>
+            <div id="space" style="height: 100px;"></div>
+            <div id="container" style="height: 350px;">
+                <form id = "submit_form" action="/board/join_success" method = "post">
+                    <input id="input_text" type="text" placeholder="ID" name="userid">
+                    <div id="space" style="height: 10px;"></div>
+                    <input id="input_text" type="password" placeholder="PASSWORD" name="userpw">
+                    <div id="space" style="height: 10px;"></div>
+                    <input id="input_text" type="password" placeholder="PASSWORD_CHECK" name="userpw_check">
+                    <div id="space" style="height: 10px;"></div>
+                    <input id="input_text" type="text" placeholder="NAME" name=username>
+                    <div id="space" style="height: 10px;"></div>
+                    <div id="radio_box">
+                        <input type="radio" checked="checked" name="gender"><span id="radio_text">Male</span>
+                        <input type="radio" name = "gender"><span id="radio_text">Female</span>
+                    </div>
+                    <div id="space" style="height: 10px;"></div>
+                    <input id="input_text" type="text" placeholder="E-MAIL" name=useremail>
+                    <div id="space" style="height: 10px;"></div>
+                    <div id="image_text">IMAGE UPLOAD</div>
+                    <input id="input_image" type="file" name="userimage">
+                </form>
+            </div>
+            <div id="space" style="height: 20px;"></div>
+            <div id="container" style="height: 50px;">
+                <div id="long_button">
+                    <a id="button_link">
+                        <div id="button_inner">
+                            <h2>Sign In</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="space" style="height: 200px;"></div>
+        </div>
+    </div>
+</body>
+</html>
