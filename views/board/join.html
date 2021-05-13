@@ -24,7 +24,7 @@
             </div>
             <div id="space" style="height: 100px;"></div>
             <div id="container" style="height: 350px;">
-                <form action="/board/join_success" id="login_form" method="POST" enctype="multipart/form-data">
+                <form id="login_form" action="/board/join_success" method="POST" enctype="multipart/form-data">
                     <input id="input_text" class="userid" name="userid" type="text" placeholder="ID" required="required">
                     <p id="check_msg" class="userid_msg" style="top: 400px;">test: is available!</p>
                     <div id="space" style="height: 10px;"></div>
@@ -36,11 +36,11 @@
                     <input id="input_text" class="username" name="username" type="text" maxlength="10" placeholder="NAME" required="required">
                     <div id="space" style="height: 10px;"></div>
                     <div id="radio_box">
-                        <input class="gender" name="gender" type="radio" checked="checked" required="required"><span id="radio_text">Male</span>
-                        <input class="gender" name="gender" type="radio" required="required"><span id="radio_text">Female</span>
+                        <input class="gender" name="gender" type="radio" value="male" checked="checked" required="required"><span id="radio_text">Male</span>
+                        <input class="gender" name="gender" type="radio" value="female" required="required"><span id="radio_text">Female</span>
                     </div>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" class="usermail" name="usermail" type="text" placeholder="E-MAIL">
+                    <input id="input_text" class="useremail" name="usermail" type="text" placeholder="E-MAIL">
                     <div id="space" style="height: 10px;"></div>
                     <div id="image_text">IMAGE UPLOAD</div>
                     <input id="input_image" name="img" type="file">
