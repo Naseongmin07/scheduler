@@ -21,7 +21,7 @@ class User extends Sequelize.Model{
                 type:Sequelize.BOOLEAN,
                 allowNull:false,
             },
-            userimail:{
+            useremail:{
                 type: Sequelize.STRING(40),
                 allowNull :false,
             }

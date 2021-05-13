@@ -14,7 +14,7 @@ app.set('view engine', 'html')
 
 app.use(express.static('static'))
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
 
 sequelize.sync({force:false})
 .then(()=>{ // resolve

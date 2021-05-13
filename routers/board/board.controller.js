@@ -38,13 +38,26 @@ let login = (req, res)=>{
     res.render('./board/login')
 }
 
-let join_success = (req,res)=>{
+let join_success = async (req,res)=>{
     let userid = req.body.userid
     let userpw = req.body.userpw
     let username = req.body.username
     let gender = req.body.gender
     let useremail = req.body.useremail
     let userimage = req.body.userimage
+    if(userimage ==null){
+        userimage == ''
+    }
+    console.log(userid, userpw, username, gender, useremail, userimage)
+
+    await User.create({
+        userid:userid, 
+        userpw:userpw, 
+        username:username, 
+        gender:gender, 
+        useremail:useremail, 
+        userimage:userimage
+    })
     res.redirect('./login')
 }
 
