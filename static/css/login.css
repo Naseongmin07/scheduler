@@ -60,6 +60,7 @@ a{
     height: 46px;
     line-height: 45px;
     text-align: center;
+    cursor: pointer;
 }
 #select > .on{
     color: #fff;
@@ -101,6 +102,7 @@ a{
     border: 1px solid #000;
     color: #f7b10a;
     background: rgba(0,0,0,.4);
+    cursor: pointer;
 }
 #long_button > #button_link:hover{
     color: #fff;
