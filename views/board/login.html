@@ -33,10 +33,10 @@
             </div>
             <div id="space" style="height: 20px;"></div>
             <div id="container" style="height: 91px;">
-                <form>
-                    <input id="input_text" type="text" placeholder="ID" name = "userid">
+                <form id = "login_submit_form" action="/board/login_check" method="POST">
+                    <input id="input_text" class="userid" type="text" placeholder="ID" name = "userid">
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="PASSWORD" name = "userpw">
+                    <input id="input_text" class="userpw" type="password" placeholder="PASSWORD" name = "userpw">
                 </form>
             </div>
             <div id="space" style="height: 20px;"></div>
@@ -62,5 +62,20 @@
             <div id="space" style="height: 200px;"></div>
         </div>
     </div>
+{% if flag == '0' %}
+<script>
+    const id = document.querySelector('.userid');
+    const pw = document.querySelector('.userpw');
+    id.setAttribute('style', 'background:red');
+    pw.setAttribute('style', 'background:red');
+
+    id.addEventListener('focus',()=>{
+        id.setAttribute('style', 'background:#fff');
+    })
+    pw.addEventListener('focus',()=>{
+        pw.setAttribute('style', 'background:#fff');
+    })
+</script>
+{% endif %}
 </body>
 </html>

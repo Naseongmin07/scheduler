@@ -7,16 +7,27 @@
     <link rel = "stylesheet" href="/css/calendar.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="/js/calendar.js"></script>
     <title>Document</title>
 </head>
     <body>
+        <div id="userinfo">
+            {% if isLogin %}
+                <span>
+                    <span id="userid">{{userid}}</span>'s SCHEDULER 
+                </span><br>
+                <a href="/board/logout" id="logout">Logout</a>
+            {% endif %}
+        </div>
+
         <div id="cal_navi">
-            <a href = '/board/calendar/?year={{year}}&month={{month_minus}}'>&lt;</a>
+            <a href = '/board/calendar/?year={{year}}&month={{month_minus}}' id="left">&lt;</a>
             <span id="y-m">
                 <span id="year">{{year}}</span>-<span id="month">{{month}}</span>
             </span>
-            <a href = '/board/calendar/?year={{year}}&month={{month_plus}}'>&gt;</a>
+            <a href = '/board/calendar/?year={{year}}&month={{month_plus}}' id="right">&gt;</a>
         </div>
+        
             <table id='calander'>
                 <tr>
                     <td id="sun">일</td>
@@ -29,35 +40,4 @@
                 </tr>
             </table>
     </body>
-    
-    <script type="text/javascript">
-        let setYear = document.querySelector('#year').innerHTML
-        let setMonth = document.querySelector('#month').innerHTML
-        let setDay = 1; 
-        let dt = new Date(`${setYear}-${setMonth}-${setDay}`)
-        let dt2 = new Date(setYear, setMonth,0)
-        let lastDay = dt2.getDate();
-        let weekDay = dt.getDay();
-        let calander = document.querySelector('#calander')
-        week = document.createElement('tr')
-        for(i=0; i < lastDay + weekDay; i++){
-            let day = document.createElement('td')
-            day.classList
-            let span = document.createElement('span')
-            if(i < weekDay){
-                week.appendChild(day)
-                continue
-            }else{
-                span.innerHTML = String(i+1-weekDay).padStart(2,0)
-                day.appendChild(span)
-                week.appendChild(day)
-                if((i+1)%7==0){
-                    calander.appendChild(week)
-                    week = document.createElement('tr')
-                }
-            }
-        }
-        calander.appendChild(week)
-        
-    </script>
 </html>

@@ -1,6 +1,7 @@
 const{sequelize, User, Schedule} = require('../../models')
 
 let calendar = (req, res)=>{
+    console.log('--------------calendar----------------')
     month = parseInt(req.query.month)
     year = parseInt(req.query.year)
     if (isNaN(month)){
@@ -26,7 +27,10 @@ let calendar = (req, res)=>{
         month:month,
         month_plus:month_plus,
         month_minus:month_minus,
-        year: year
+        year: year,
+
+        userid:req.session.uid,
+        isLogin:req.session.isLogin
     })
 }
 
@@ -35,7 +39,8 @@ let join = (req, res)=>{
 }
 
 let login = (req, res)=>{
-    res.render('./board/login')
+    flag = req.query.flag
+    res.render('./board/login',{flag})
 }
 
 let join_success = async (req,res)=>{
@@ -61,9 +66,45 @@ let join_success = async (req,res)=>{
     res.redirect('./login')
 }
 
+
+let login_check = async(req,res)=>{
+    console.log(req.body);
+    month = parseInt(new Date().getMonth()+1)
+    year = parseInt(new Date().getFullYear())
+    
+    let userid = req.body.userid;
+    let userpw = req.body.userpw;
+
+    let result = await User.findOne({
+        where: { userid, userpw }
+    });
+
+    if (result == null) {
+        res.redirect('/board/login?flag=0');
+    } else {
+        req.session.uid = userid;
+        req.session.isLogin = true;
+        req.session.save(() => {
+            res.redirect(`./calendar`)
+        })
+    }
+    console.log(req.session);
+}
+
+let logout = (req,res)=>{
+    delete req.session.isLogin;
+    delete req.session.uid;
+
+    req.session.save(()=>{
+        res.redirect('/');
+    })
+}
+
 module.exports = {
     calendar,
     join,
     login,
     join_success,
+    login_check,
+    logout
 }
