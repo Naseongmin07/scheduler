@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js"></script>
     <title>Document</title>
 </head>
 <body style="background: #211510;">
@@ -13,7 +14,7 @@
             <div id="space" style="height: 100px;"></div>
             <div id="container">
                 <div id="title">
-                    <a href="../main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                    <a href="/" style="color: #000;"><h2>SCHEDULER</h2></a>
                 </div>
             </div>
             <div id="container">
@@ -32,10 +33,10 @@
             </div>
             <div id="space" style="height: 20px;"></div>
             <div id="container" style="height: 91px;">
-                <form id = "login_submit_form" action="/board/login_check" method="POST">
-                    <input id="input_text" class="userid" type="text" placeholder="ID" name = "userid">
+                <form id="login_submit_form" action="/board/login_check" method="POST">
+                    <input id="input_text" class="userid" name="userid" type="text" placeholder="ID">
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" class="userpw" type="password" placeholder="PASSWORD" name = "userpw">
+                    <input id="input_text" class="userpw" name="userpw" type="password" placeholder="PASSWORD">
                 </form>
             </div>
             <div id="space" style="height: 20px;"></div>
@@ -51,7 +52,7 @@
             <div id="space" style="height: 10px;"></div>
             <div id="container" style="height: 50px;">
                 <div id="long_button">
-                    <a id="button_link" href="#">
+                    <a id="button_link">
                         <div id="button_inner">
                             <h2>Create Account</h2>
                         </div>
