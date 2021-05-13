@@ -61,6 +61,10 @@ let join_success = async (req,res)=>{
     res.redirect('./login')
 }
 
+let schedule = async (req,res)=>{
+    res.redirect('./calendar')
+}
+
 module.exports = {
     calendar,
     join,

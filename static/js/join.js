@@ -1,12 +1,12 @@
-const init = ()=>{
 
-    let userid = document.querySelector('#userid')
-    let pw1 = document.querySelector('#userpw')
-    let pw2 = document.querySelector('#userpw_check')
-    let username = document.querySelector('#username')
-    let useremail = document.querySelector('#useremail')
-    let submit_form = document.querySelector('#submit_form')
-    let button_link = document.querySelector('#button_link')
+const init = ()=>{
+    var userid = document.querySelector('#userid')
+    var pw1 = document.querySelector('#userpw')
+    var pw2 = document.querySelector('#userpw_check')
+    var username = document.querySelector('#username')
+    var useremail = document.querySelector('#useremail')
+    var submit_form = document.querySelector('#submit_form')
+    var button_link = document.querySelector('#button_link')
 
     button_link.addEventListener('click',()=>{
         submit_form.submit()

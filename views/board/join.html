@@ -26,6 +26,7 @@
             <div id="container" style="height: 350px;">
                 <form id = "submit_form" action="/board/join_success" method = "post">
                     <input id="input_text" type="text" placeholder="ID" name="userid">
+                    <p id = 'userid_check'></p>
                     <div id="space" style="height: 10px;"></div>
                     <input id="input_text" type="password" placeholder="PASSWORD" name="userpw">
                     <div id="space" style="height: 10px;"></div>
@@ -57,5 +58,6 @@
             <div id="space" style="height: 200px;"></div>
         </div>
     </div>
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </body>
 </html>

@@ -6,5 +6,6 @@ router.get('/calendar', controller.calendar)
 router.get('/join', controller.join)
 router.get('/login', controller.login)
 router.post('/join_success',controller.join_success)
+// router.post('/schedule',controller.schedule)
 
 module.exports = router

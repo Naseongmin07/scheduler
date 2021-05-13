@@ -28,9 +28,33 @@
                     <td id="sat">토</td>
                 </tr>
             </table>
+        <div class="modal" action = "/board/schedule" method="post"> 
+            <div class="modal-content"> 
+                <span class="close-button">&times;</span> 
+                <h1 class="title">Create schedule</h1>
+                <h2 class="date"></h2> 
+                <form id="schedule_form"> 
+                <label></label> 
+                <textarea id = "text" name="message" placeholder="Test Message" required="required"></textarea> 
+                <input type="button" id="cancel" value="취소"> 
+                <input type="button" id="submit" value="확인"> 
+                </form> 
+            </div> 
+        </div>
     </body>
     
     <script type="text/javascript">
+
+        let calander = document.querySelector('#calander')
+        let modal = document.querySelector('.modal')
+        let closeButton = document.querySelector('.close-button')
+        let cancel = document.querySelector('#cancel')
+        let date = document.querySelector('.date')
+        let submit = document.querySelector('#submit')
+        let schedule_form = document.querySelector('#schedule_form')
+        let text = document.querySelector('#text')
+
+
         let setYear = document.querySelector('#year').innerHTML
         let setMonth = document.querySelector('#month').innerHTML
         let setDay = 1; 
@@ -38,17 +62,20 @@
         let dt2 = new Date(setYear, setMonth,0)
         let lastDay = dt2.getDate();
         let weekDay = dt.getDay();
-        let calander = document.querySelector('#calander')
+
         week = document.createElement('tr')
+
         for(i=0; i < lastDay + weekDay; i++){
             let day = document.createElement('td')
-            day.classList
             let span = document.createElement('span')
             if(i < weekDay){
                 week.appendChild(day)
                 continue
             }else{
                 span.innerHTML = String(i+1-weekDay).padStart(2,0)
+                day.setAttribute('class',`${setMonth.padStart(2,0)}-${span.innerHTML}`)
+                day.setAttribute('id','box_day')
+                day.addEventListener('click',create_schedule)
                 day.appendChild(span)
                 week.appendChild(day)
                 if((i+1)%7==0){
@@ -57,7 +84,34 @@
                 }
             }
         }
+
+        function create_schedule(){
+            console.log(typeof this.children)
+            date.innerHTML = `${setYear}-${setMonth}-${this.children[0].innerHTML}`
+            modal.setAttribute('class','modal show-modal')
+        }
+
+        function close_schedule(){
+            modal.setAttribute('class','modal')
+        }
+
+        function submit_schedule(){
+            modal.setAttribute('class','modal')
+            if (text.value==''){
+                return
+            }
+            // schedule_form.submit()
+        }
+
         calander.appendChild(week)
+
+        closeButton.addEventListener('click',close_schedule)
+
+        cancel.addEventListener('click',close_schedule)
+
+        submit.addEventListener('click',submit_schedule)
+
+
         
     </script>
 </html>
