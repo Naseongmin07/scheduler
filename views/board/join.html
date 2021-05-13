@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../static/css/join.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/join.css">
+    <script src="/js/join.js"></script>
     <title>Document</title>
 </head>
 <body style="background: #211510;">
@@ -13,7 +14,7 @@
             <div id="space" style="height: 100px;"></div>
             <div id="container">
                 <div id="title">
-                    <a href="../main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                    <a href="/" style="color: #000;"><h2>SCHEDULER</h2></a>
                 </div>
             </div>
             <div id="container">
@@ -23,38 +24,42 @@
             </div>
             <div id="space" style="height: 100px;"></div>
             <div id="container" style="height: 350px;">
-                <form>
-                    <input id="input_text" type="text" placeholder="ID">
+                <form action="/board/join_success" id="login_form" method="POST" enctype="multipart/form-data">
+                    <input id="input_text" class="userid" name="userid" type="text" placeholder="ID" required="required">
+                    <p id="check_msg" class="userid_msg" style="top: 400px;">test: is available!</p>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="PASSWORD">
+                    <input id="input_text" class="userpw" name="userpw" type="text" placeholder="PASSWORD" required="required">
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="PASSWORD_CHECK">
+                    <input id="input_text" class="userpw_check" name="userpw_check" type="text" placeholder="PASSWORD_CHECK" required="required">
+                    <p id="check_msg" class="userpw_msg" style="top: 500px;">test: is unavailable!</p>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="NAME">
+                    <input id="input_text" class="username" name="username" type="text" maxlength="10" placeholder="NAME" required="required">
                     <div id="space" style="height: 10px;"></div>
                     <div id="radio_box">
-                        <input type="radio" checked="checked"><span id="radio_text">Male</span>
-                        <input type="radio"><span id="radio_text">Female</span>
+                        <input class="gender" name="gender" type="radio" checked="checked" required="required"><span id="radio_text">Male</span>
+                        <input class="gender" name="gender" type="radio" required="required"><span id="radio_text">Female</span>
                     </div>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="E-MAIL">
+                    <input id="input_text" class="usermail" name="usermail" type="text" placeholder="E-MAIL">
                     <div id="space" style="height: 10px;"></div>
                     <div id="image_text">IMAGE UPLOAD</div>
-                    <input id="input_image" type="file">
+                    <input id="input_image" name="img" type="file">
+
+                    <div id="space" style="height: 20px;"></div>
+                    <div id="container" style="height: 50px;">
+                        <div id="long_button">
+                            <a id="button_link" class="login_submit">
+                                <div id="button_inner">
+                                    <h2>Sign In</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <div id="space" style="height: 20px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="long_button">
-                    <a id="button_link" href="#">
-                        <div id="button_inner">
-                            <h2>Sign In</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div id="space" style="height: 200px;"></div>
+            <div id="space" style="height: 170px;"></div>
         </div>
     </div>
+    <div id="space" style="height: 70px;"></div>
 </body>
 </html>
