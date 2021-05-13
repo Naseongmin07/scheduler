@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/main.css" rel="stylesheet">
-    <script src="/js/main.js"></script>
+    <link href="../static/css/main.css" rel="stylesheet">
+    <script src="../js/main.js"></script>
     <title>Document</title>
+    <script type="text/javascript">
+        var index = 0;
+        function fc1(){
+            var cb = document.querySelector('.hide');
+            if (index == 1){
+                cb.setAttribute('class','hide on');
+            }
+            if (index >= 2){
+                index = 0;
+            }
+            if (index == 0){
+                cb.setAttribute('class','hide off');
+            }
+            index++;
+        }
+    </script>
 </head>
 <body>
     <body style="background: #211510;">
-        <div id="wrap">
+        <div id="motto_wrap">
+            <div id="space" style="height: 10px;"></div>
+            <div id="container">
+                <div id="motto">
+                    <a href="main.html" style="color: #000;"><h2>'Hello, World!'</h2></a>
+                </div>
+            </div>
+        </div>
+        <div id="blackboard_wrap">
+            <div id="container">
+                <div id="logo">
+                    <a href="main.html"><img src="../static/images/logo.png"></a>
+                </div>
+                <div id="title">
+                    <a href="main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                </div>
+            </div>
             <div id="space" style="height: 5px;"></div>
             <div id="container" style="height: 50px;">
                 <div id="button">
-                    <a id="button_link" href="./board/login">
+                    <a id="button_link" href="./board/login.html">
                         <div id="button_inner">
                             <h2>Log In</h2>
                         </div>
@@ -24,7 +56,7 @@
             <div id="space" style="height: 5px;"></div>
             <div id="container" style="height: 50px;">
                 <div id="button">
-                    <a id="button_link" href="./board/join">
+                    <a id="button_link" href="./board/join.html">
                         <div id="button_inner">
                             <h2>Create Account</h2>
                         </div>
@@ -51,13 +83,34 @@
             </div>
         </div>
         <div id="tool">
-            <div id="eraser"><div id="eraser_handle"></div></div>
-            <div id="chalk">
-                <div id="chalk_white"></div>
-                <div id="chalk_blue"></div>
-                <div id="chalk_pink"></div>
+            <div id="magnet_bundle">
+                <div id="magnet" class="red"></div>
+                <div id="magnet" class="yellow"></div>
+                <div id="magnet" class="green"></div>
+                <div id="magnet" class="purple"></div>
+                <div id="magnet" class="sky"></div>
+            </div>
+            <div id="chalk_case">
+                <div id="chalk_vertical" class="white"></div>
+                <div id="chalk_vertical" class="blue"></div>
+                <div id="chalk_vertical" class="yellow"></div>
+                <div id="chalk_vertical" class="red"></div>
+                <div id="case"></div>
+            </div>
+            <div id="eraser">
+                <div id="eraser_body"><div id="eraser_handle"></div></div>
+            </div>
+            <div id="chalk_bundle">
+                <div id="chalk_horizontal" class="white"></div>
+                <div id="chalk_horizontal" class="blue"></div>
+                <div id="chalk_horizontal" class="pink" style="margin-right: 0;"></div>
+            </div>
+            <div id="eraser2">
+                <div id="eraser2_body"><div id="eraser2_handle"></div></div>
+                <div id="eraser2_base"></div>
             </div>
         </div>
+        <div id="underlay"></div>
     </div>
 </body>
 </html>
