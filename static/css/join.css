@@ -59,6 +59,13 @@ a{
     border: 1px solid rgb(218, 218, 218);
     outline: none;
 }
+#check_msg{
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 610px;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
 #radio_box{
     width: 358px;
     height: 18px;
@@ -92,6 +99,7 @@ a{
     border: 1px solid #000;
     color: #f7b10a;
     background: rgba(0,0,0,.4);
+    cursor: pointer;
 }
 #long_button > #button_link:hover{
     color: #fff;
