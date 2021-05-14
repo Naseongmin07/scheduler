@@ -38,11 +38,6 @@ let join = (req, res)=>{
     res.render('./board/join')
 }
 
-let login = (req, res)=>{
-    flag = req.query.flag
-    res.render('./board/login',{flag})
-}
-
 let join_success = async (req,res)=>{
     let userid = req.body.userid
     let userpw = req.body.userpw
@@ -50,22 +45,26 @@ let join_success = async (req,res)=>{
     let gender = req.body.gender
     let useremail = req.body.useremail
     let userimage = req.body.userimage
-    if(userimage ==null){
+    if(userimage == null){
         userimage == ''
     }
-    console.log(userid, userpw, username, gender, useremail, userimage)
-
+    console.log(userid, userpw, username, gender, useremail, userimage);
+    
     await User.create({
-        userid:userid, 
-        userpw:userpw, 
-        username:username, 
-        gender:gender, 
-        useremail:useremail, 
+        userid:userid,
+        userpw:userpw,
+        username:username,
+        gender:gender,
+        useremail:useremail,
         userimage:userimage
     })
-    res.redirect('./login')
+    res.render('./board/join_success',{ userid, username})
 }
 
+let login = (req, res)=>{
+    flag = req.query.flag
+    res.render('./board/login',{flag})
+}
 
 let login_check = async(req,res)=>{
     console.log(req.body);
@@ -103,8 +102,9 @@ let logout = (req,res)=>{
 module.exports = {
     calendar,
     join,
-    login,
     join_success,
+    userid_check,
+    login,
     login_check,
     logout
 }
