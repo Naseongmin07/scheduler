@@ -57,7 +57,7 @@ class Schedule extends Sequelize.Model{
             userid:{
                 type: Sequelize.STRING(20),
                 allowNull:false,
-                unique:true,
+                unique:false,
             },
             scheduledt:{
                 type:Sequelize.DATEONLY,

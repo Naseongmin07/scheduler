@@ -3,6 +3,8 @@ const{sequelize, User, Schedule} = require('../../models')
 let calendar = (req, res)=>{
     month = parseInt(req.query.month)
     year = parseInt(req.query.year)
+    userid = req.session.uid
+    isLogin = req.session.isLogin
     if (isNaN(month)){
         month = parseInt(new Date().getMonth()+1)
     }
@@ -26,7 +28,9 @@ let calendar = (req, res)=>{
         month:month,
         month_plus:month_plus,
         month_minus:month_minus,
-        year: year
+        year: year,
+        userid: userid,
+        isLogin: isLogin
     })
 }
 
@@ -35,7 +39,8 @@ let join = (req, res)=>{
 }
 
 let login = (req, res)=>{
-    res.render('./board/login')
+    flag = req.query.flag
+    res.render('./board/login',{flag})
 }
 
 let join_success = async (req,res)=>{
@@ -61,8 +66,49 @@ let join_success = async (req,res)=>{
     res.redirect('./login')
 }
 
+let login_check = async(req,res)=>{
+    month = parseInt(new Date().getMonth()+1)
+    year = parseInt(new Date().getFullYear())
+    
+    let userid = req.body.userid;
+    let userpw = req.body.userpw;
+
+    let result = await User.findOne({
+        where: { userid, userpw }
+    });
+    
+
+    if (result == null) {
+        res.redirect('/board/login?flag=0');
+    } else {
+        req.session.uid = userid;
+        req.session.isLogin = true;
+        req.session.save(() => {
+            res.redirect(`./calendar`)
+        })
+    }
+}
+
+let logout = (req,res)=>{
+    delete req.session.isLogin;
+    delete req.session.uid;
+
+    req.session.save(()=>{
+        res.redirect('/');
+    })
+}
+
 let schedule = async (req,res)=>{
-    res.redirect('./calendar')
+    let userid = req.session.uid
+    let scheduledt = req.body.date_area
+    let content = req.body.message
+    let dataArray = scheduledt.split('-')
+    await Schedule.create({
+        userid,
+        scheduledt,
+        content,
+    })
+    res.redirect(`/board/calendar?year=${dataArray[0]}&month=${dataArray[1]}`)
 }
 
 module.exports = {
@@ -70,4 +116,7 @@ module.exports = {
     join,
     login,
     join_success,
+    login_check,
+    logout,
+    schedule
 }

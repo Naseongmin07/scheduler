@@ -9,6 +9,40 @@ a{
     color : rgb(102, 101, 101);
 }
 
+#userinfo{
+    text-align: right;
+    padding: 10px 190px 0 0;
+}
+
+#userid{
+    color: #496bbb;
+}
+
+#userinfo>span{
+    display: block;
+    height: 30px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#logout{
+    font-size: 18px;
+    font-weight: 900;
+    background: lightgray;
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    padding: 7px 0 0 0;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid #a29b9b;
+}
+
+#logout:hover{
+    background: gray;
+    color: white;
+}
+
 #cal_navi{
     text-align: center;
     font-size: 50px;
@@ -23,6 +57,11 @@ a{
 #cal_navi>span>span{
     font-weight: 700;
     font-size: 60px;
+}
+
+#left:hover,
+#right:hover{
+    color: #496bbb;
 }
 
 
@@ -40,16 +79,12 @@ table{
     font-size: 30px;
     font-weight: bold;
 }
-#box_day:hover{
-    background : rgb(213, 252, 137);
-}
 
 #calander>tr
 {
     height: 150px;
     font-size: 20px;
     font-weight: 500;
-    box-sizing:border-box;
     background: lightgrey;
 }
 
@@ -71,6 +106,9 @@ table{
     color: rgb(20, 20, 236);
 }
 
+#box_day:hover{
+    background: rgb(178, 199, 137)
+}
 
 h1{ 
     font-family: 'Oswald', sans-serif; 
@@ -98,12 +136,17 @@ input, textarea {
     font-size: 0.9em; 
     color: #3a3a3a; 
 } 
+
+#date_area{
+    display:none;
+}
 input:focus, textarea:focus{ 
         border: 1px solid #97d6eb; 
     } 
 
 
 textarea{ 
+    margin-top: 20px;
     height: 60px; 
     background-color: #efefef; 
 } 

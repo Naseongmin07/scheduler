@@ -10,6 +10,15 @@
     <title>Document</title>
 </head>
     <body>
+        <div id="userinfo">
+            {% if isLogin %}
+                <span>
+                    <span id="userid">{{userid}}</span>'s SCHEDULER 
+                </span><br>
+                <a href="/board/logout" id="logout">Logout</a>
+            {% endif %}
+        </div>
+
         <div id="cal_navi">
             <a href = '/board/calendar/?year={{year}}&month={{month_minus}}'>&lt;</a>
             <span id="y-m">
@@ -28,17 +37,17 @@
                     <td id="sat">토</td>
                 </tr>
             </table>
-        <div class="modal" action = "/board/schedule" method="post"> 
+        <div class="modal"> 
             <div class="modal-content"> 
                 <span class="close-button">&times;</span> 
                 <h1 class="title">Create schedule</h1>
                 <h2 class="date"></h2> 
-                <form id="schedule_form"> 
-                <label></label> 
-                <textarea id = "text" name="message" placeholder="Test Message" required="required"></textarea> 
+                <form id="schedule_form" action = "/board/schedule" method="post"> 
+                    <textarea id= "date_area" name="date_area" required = required></textarea>
+                    <textarea id = "text" name="message" placeholder="Test Message" required="required"></textarea> 
+                </form> 
                 <input type="button" id="cancel" value="취소"> 
                 <input type="button" id="submit" value="확인"> 
-                </form> 
             </div> 
         </div>
     </body>
@@ -53,6 +62,7 @@
         let submit = document.querySelector('#submit')
         let schedule_form = document.querySelector('#schedule_form')
         let text = document.querySelector('#text')
+        let date_area = document.querySelector('#date_area')
 
 
         let setYear = document.querySelector('#year').innerHTML
@@ -86,8 +96,7 @@
         }
 
         function create_schedule(){
-            console.log(typeof this.children)
-            date.innerHTML = `${setYear}-${setMonth}-${this.children[0].innerHTML}`
+            date.innerHTML = `${setYear}-${setMonth.padStart(2,0)}-${this.children[0].innerHTML}`
             modal.setAttribute('class','modal show-modal')
         }
 
@@ -100,7 +109,9 @@
             if (text.value==''){
                 return
             }
-            // schedule_form.submit()
+            date_area.value = `${date.innerHTML}`
+            schedule_form.submit()
+            date_area.value = ''
         }
 
         calander.appendChild(week)
@@ -110,8 +121,6 @@
         cancel.addEventListener('click',close_schedule)
 
         submit.addEventListener('click',submit_schedule)
-
-
         
     </script>
 </html>
