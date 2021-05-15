@@ -12,8 +12,8 @@ const init = ()=>{
 
     let login_form = document.querySelector('#login_form');
     let button_link = document.querySelector('#button_link');
-
-    // 비밀번호 확인 
+   
+    // 비밀번호 사용 가능 여부 확인 
     function password_check(){
         return userpw.value == userpw_check.value;
     }
@@ -42,5 +42,6 @@ const init = ()=>{
         }
         login_form.submit()
     })
+
 }
 window.addEventListener('DOMContentLoaded',init);
