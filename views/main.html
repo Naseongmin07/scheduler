@@ -5,24 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
     <title>Document</title>
-    <script type="text/javascript">
-        var index = 0;
-        function fc1(){
-            var cb = document.querySelector('.hide');
-            if (index == 1){
-                cb.setAttribute('class','hide on');
-            }
-            if (index >= 2){
-                index = 0;
-            }
-            if (index == 0){
-                cb.setAttribute('class','hide off');
-            }
-            index++;
-        }
-    </script>
 </head>
 <body>
     <body style="background: #211510;">
@@ -57,21 +41,15 @@
                 </div>
             </div>
             <div id="space" style="height: 5px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="button">
-                    <a id="button_link" class="hidden" onclick="fc1();">
-                        <div id="button_inner">
-                            <h2>떠든 사람</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div id="space" style="height: 5px;"></div>
-            <div id="createby" class="hide on">
-                <div id="createby_text">
-                    <h2>나성민(반장)</h2>
-                    <h2>이혜준</h2>
-                    <h2>남지환</h2>
+            <div id="container">
+                <div id="createby">
+                    <a id="createby_title" class="hidden" onclick="fc1();"><h2>☆ 떠든 사람 ☆</h2></a>
+                    <div id="createby_text" class="hide on">
+                        <h2>나성민(반장)</h2>
+                        <h2>이혜준</h2>
+                        <h2>남지환</h2>
+                        <div id="puppy"><img src="/images/puppy.png"></div>
+                    </div>
                 </div>
             </div>
         </div>
