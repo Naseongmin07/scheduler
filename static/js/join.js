@@ -12,7 +12,21 @@ const init = ()=>{
 
     let login_form = document.querySelector('#login_form');
     let button_link = document.querySelector('#button_link');
-   
+
+    // 아이디 중복 여부 확인
+    async function userid_check(){
+        let ag = await axios.get(`http://localhost:3000/board/userid_check?userid=${userid.value}`);
+        login_flag = ag.data.login;
+        if (login_flag){
+            userid_msg.innerHTML = 'is available!';
+            userid_msg.style.color = '#f7b10a';
+        } else{
+            userid_msg.innerHTML = 'is unavailable!';
+            userid_msg.style.color = 'red';
+        }
+    }
+    userid.addEventListener('focusout',userid_check);
+    
     // 비밀번호 사용 가능 여부 확인 
     function password_check(){
         return userpw.value == userpw_check.value;
