@@ -45,11 +45,12 @@ let join_success = async (req,res)=>{
     let gender = req.body.gender
     let useremail = req.body.useremail
     let userimage = req.body.userimage
-    if(userimage == null){
+
+    if (userimage == null){
         userimage == ''
     }
     console.log(userid, userpw, username, gender, useremail, userimage);
-    
+
     await User.create({
         userid:userid,
         userpw:userpw,
@@ -59,6 +60,23 @@ let join_success = async (req,res)=>{
         userimage:userimage
     })
     res.render('./board/join_success',{ userid, username})
+}
+
+let userid_check = async (req,res)=>{
+    let userid = req.query.userid;
+    let check = false;
+    let result = await User.findOne({
+        where:{ userid }
+    })
+    if (result == undefined){
+        check = true;
+    } else{
+        check = false;
+    }
+    res.json({
+        login:check,
+        userid,
+    })
 }
 
 let login = (req, res)=>{
