@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/join.css">
+    <link rel="stylesheet" href="/css/join_success.css">   
     <title>Document</title>
 </head>
 <body style="background: #211510;">
     <div id="body">
         <div id="wrap">
+            <div id="cone_bundle">
+                <div id="cones" class="cones1">
+                    <img src="/images/cones.png">
+                </div>
+                <div id="cones" class="cones2">
+                    <img src="/images/cones.png">
+                </div>
+                <div id="cones" class="cones3">
+                    <img src="/images/cones.png">
+                </div>
+            </div>
             <div id="space" style="height: 100px;"></div>
             <div id="container">
                 <div id="title">
-                    <a href="../main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                    <a href="/" style="color: #000;"><h2>SCHEDULER</h2></a>
                 </div>
             </div>
             <div id="container">
@@ -22,12 +33,17 @@
                 </div>
             </div>
             <div id="space" style="height: 100px;"></div>
-            <div id="container" style="height: 90px;">
-                {{userid}}({{username}})님 사이트 가입을 환영합니다
-                <div id="space" style="height: 20px;"></div>
+            <div id="container" style="height: 200px;">
+                <div id="welcome_text">
+                    <p style="font-size: 80px;">환영합니다!</p>
+                    <div id="space" style="height: 50px;"></div>
+                    <h3><span>{{username}}</span>님의 회원가입을 축하드립니다.</h3>
+                    <h3>새로운 아이디는 <span>{{userid}}</span>입니다.</h3>
+                </div>
+                <div id="space" style="height: 100px;"></div>
                 <div id="container" style="height: 50px;">
                     <div id="long_button">
-                        <a id="button_link" class="login_submit" href="#">
+                        <a id="button_link" class="login_submit" href="/">
                             <div id="button_inner">
                                 <h2>Go Main</h2>
                             </div>
@@ -35,9 +51,19 @@
                     </div>
                 </div>
             </div>
-            <div id="space" style="height: 100px;"></div>
+            <div id="tool">
+                <div id="eraser">
+                    <div id="eraser_body"><div id="eraser_handle"></div></div>
+                </div>
+                <div id="chalk_bundle">
+                    <div id="chalk_horizontal" class="white"></div>
+                    <div id="chalk_horizontal" class="blue"></div>
+                    <div id="chalk_horizontal" class="pink" style="margin-right: 0;"></div>
+                </div>
+            </div>
+            <div id="space" style="height: 250px;"></div>
         </div>
+        <div id="space" style="height: 70px;"></div>
     </div>
-    <div id="space" style="height: 70px;"></div>
 </body>
 </html>
