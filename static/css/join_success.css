@@ -51,45 +51,6 @@ a{
     text-align: center;
 }
 
-#select{
-    float: left;
-}
-#select > a{
-    display: inline-block;
-    width: 196px;
-    height: 46px;
-    line-height: 45px;
-    text-align: center;
-    cursor: pointer;
-}
-#select > .on{
-    color: #fff;
-    background: #000;
-    border: 2px solid #000;
-}
-#select > .on:hover{
-    border: 2px solid rgb(218, 218, 218);
-    transition: 0.5s;
-}
-#select > .off{
-    color: #000;
-    background: #fff;
-    border: 2px solid rgb(218, 218, 218);
-}
-#select > .off:hover{
-    border: 2px solid #000;
-    transition: 0.5s;
-}
-
-#input_text{
-    width: 358px;
-    height: 18px;
-    margin-left: 200px;
-    padding: 10px 20px 10px 20px;
-    border: 1px solid rgb(218, 218, 218);
-    outline: none;
-}
-
 #long_button{
     margin-left: 200px;
 }
@@ -116,10 +77,41 @@ a{
     border: 1px solid #c77e19;
 }
 
+#welcome_text{
+    text-align: center;
+}
+#welcome_text > h3 > span{
+    color: #f7b10a;
+}
+
 /* 꾸미기 */
+#cone_bundle{
+    position: absolute;
+    top: 75px;
+    width: 805px;
+}
+#cone_bundle > #cones{
+    width: 33%;
+    float: left;
+}
+#cone_bundle > #cones > img{
+    resize: both;
+    width: 100%;
+    float: center;
+}
+#cone_bundle > .cones1{
+    margin-top: 40px;
+    transform: rotate(-20deg);
+}
+#cone_bundle > .cones3{
+    margin-top: 40px;
+    margin-left: 5px;
+    transform: rotate(20deg) scaleX(-1);
+}
+
 #tool{
     position: absolute;
-    top: 781px;
+    top: 840px;
 }
 
 #eraser > #eraser_body{

@@ -94,21 +94,36 @@ a{
     height: 45px;
     border: 1px solid #ea3012;
 }
-.hidden{
+
+#noise_box{
+    margin-top: 100px;
+    float: right;
+    margin-right: 5px;
+}
+#noise_box> #noise{
+    display: inline-block;
+    width: 198px;
+    height: 48px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
     cursor: pointer;
 }
 
 #createby{
+    margin-top: 100px;
+    margin-right: 15px;
     float: right;
+    color: #fff;
+    text-align: center;
+}
+#createby > #createby_title{
+    cursor: pointer;
 }
 #createby > #createby_text{
-    width: 200px;
-    height: 50px;
-    color: #fff;
-    font-size: 15px;
-    line-height: 45px;
-    text-align: center;
-
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 30px;
 }
 .hide.on{
     display: none;
@@ -126,11 +141,22 @@ a{
 }
 
 /* 꾸미기 */
+#puppy{
+    position: absolute;
+    top: 490px;
+    margin-right: 50px;
+}
+#puppy > img{
+    resize: both;
+    width: 80%;
+}
+
 #tool{
     position: absolute;
     width: 100%;
     top: 870px;
 }
+
 #magnet_bundle{
     position: absolute;
     top: -250px;
