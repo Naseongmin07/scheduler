@@ -62,5 +62,25 @@
         </div>
     </div>
     <div id="space" style="height: 70px;"></div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script type="text/javascript">
+        let userid = document.querySelector('.userid');
+        let userid_msg = document.querySelector('.userid_msg');
+
+        // 아이디 중복 여부 확인
+        async function userid_check(){
+            let ag = await axios.get(`http://localhost:3000/board/userid_check?userid=${userid.value}`);
+            login_flag = ag.data.login;
+            if (login_flag){
+                userid_msg.innerHTML = 'is available!';
+                userid_msg.style.color = '#f7b10a';
+            } else{
+                userid_msg.innerHTML = 'is unavailable!';
+                userid_msg.style.color = 'red';
+            }
+        }
+        userid.addEventListener('focusout',userid_check);
+    </script>
 </body>
 </html>
