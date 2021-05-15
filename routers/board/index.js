@@ -8,5 +8,6 @@ router.post('/join_success',controller.join_success);
 router.get('/login', controller.login);
 router.post('/login_check', controller.login_check);
 router.get('/logout',controller.logout);
+router.get('/userid_check',controller.userid_check);
 
 module.exports = router;
