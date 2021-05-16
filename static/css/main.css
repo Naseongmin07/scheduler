@@ -160,7 +160,7 @@ a{
 #magnet_bundle{
     position: absolute;
     top: -250px;
-    margin-left: 80px;
+    margin-left: 40px;
 }
 #magnet_bundle > #magnet{
     width: 15px;
@@ -196,7 +196,7 @@ a{
     width: 60px;
     height: 20px;
     top: -15px;
-    margin-left: 800px;
+    margin-left: 700px;
     float: left;
     background: rgb(255, 165, 0);
     border-radius: 3px;
@@ -213,7 +213,7 @@ a{
     width: 60px;
     height: 10px;
     top: -15px;
-    margin-left: 1400px;
+    margin-left: 1300px;
     float: left;
     background: rgb(255, 165, 0);
     border-radius: 3px;
@@ -229,7 +229,7 @@ a{
     width: 56px;
     height: 10px;
     top: -5px;
-    margin-left: 1402px;
+    margin-left: 1302px;
     float: left;
     background: rgb(0, 48, 33);
     border-radius: 3px;
@@ -238,7 +238,7 @@ a{
 #chalk_case{
     position: absolute;
     top: -30px;
-    margin-left: 650px;
+    margin-left: 550px;
 }
 #chalk_case > #chalk_vertical{
     position: absolute;
@@ -284,7 +284,7 @@ a{
 
 #chalk_bundle{
     width: 120px;
-    margin-left: 1200px;
+    margin-left: 1100px;
 }
 #chalk_bundle > #chalk_horizontal{
     width: 30px;
