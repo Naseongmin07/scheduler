@@ -84,6 +84,7 @@
         let date_area = document.querySelector('#date_area')
         let userid = document.querySelector('#userid')
 
+
         let modify = document.querySelector('.modify')
         let close_modify = document.querySelector('.close-modify')
         let cancel_modify = document.querySelector('#cancel_modify')
@@ -115,7 +116,6 @@
                 continue
             }else{
                 span.innerHTML = String(i+1-weekDay).padStart(2,0)
-                p.innerHTML = "contents들"
                 day.setAttribute('class',`${setYear}-${setMonth.padStart(2,0)}-${span.innerHTML}`)
                 day.setAttribute('data-value',`${setYear}-${setMonth.padStart(2,0)}-${span.innerHTML}`)
                 day.setAttribute('id','box_day')
@@ -129,6 +129,7 @@
                 }
             }
         }
+        calander.appendChild(week)
 
         async function get_data(){
             
@@ -144,6 +145,7 @@
                             if(row.dataset.value == v.scheduledt){
                                 p.addEventListener('click',modify_schedule)
                                 p.setAttribute('class',`${v.id}`)
+                                p.setAttribute('id', 'p')
                                 p.innerHTML = v.content;
                                 row.querySelector('p').appendChild(p)
                         }
@@ -152,13 +154,13 @@
                 })
             })
         }
+
         get_data();
 
- 
-        
-        function create_schedule(e){
 
-            if(e.target.nodeName === "P"){
+        function create_schedule(e){
+            
+            if(e.target.id === "p"){
                 return
             }
             date.innerHTML = `${setYear}-${setMonth.padStart(2,0)}-${this.children[0].innerHTML}`
@@ -179,7 +181,7 @@
             date_area.value = ''
         }
 
-        function modify_schedule(){
+        function modify_schedule(e){
             id = this.className
             date.innerHTML = this.parentNode.parentNode.className
             modify.setAttribute('class','modify show-modify')
@@ -207,7 +209,6 @@
             modify.setAttribute('class','modify')
         }
 
-        calander.appendChild(week)
 
         closeButton.addEventListener('click',close_schedule)
 
@@ -220,10 +221,6 @@
         cancel_modify.addEventListener('click',delete_modify)
 
         submit_modify.addEventListener('click',start_modify)
-
-
-
-
 
 
     </script>

@@ -86,6 +86,7 @@ table{
     font-size: 20px;
     font-weight: 500;
     background: lightgrey;
+    cursor:pointer;
 }
 
 
@@ -112,9 +113,17 @@ table{
     background: rgb(178, 199, 137)
 }
 
-#box_day>p{
-    background: yellow;
+#box_day>p{ 
     height: 81%;
+    width: 200px;
+}
+
+#box_day>p>p{
+    color: black;
+    cursor:pointer;
+    background: rgb(136, 136, 255);
+    border: 1px solid rgb(236, 236, 236);
+    box-sizing: border-box
 }
 
 h1{ 

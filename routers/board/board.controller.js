@@ -23,7 +23,7 @@ let calendar = (req, res)=>{
     else{
         month_minus = month-1
     }
-    
+
     res.render('./board/calendar',{
         month:month,
         month_plus:month_plus,
