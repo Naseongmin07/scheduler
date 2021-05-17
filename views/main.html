@@ -4,60 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
     <script src="/js/main.js"></script>
     <title>Document</title>
 </head>
-<body>
-    <body style="background: #211510;">
-        <div id="wrap">
-            <div id="space" style="height: 5px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="button">
-                    <a id="button_link" href="./board/login">
-                        <div id="button_inner">
-                            <h2>Log In</h2>
-                        </div>
-                    </a>
-                </div>
+<body style="background: #211510;">
+    <div id="motto_wrap"></div>
+    <div id="blackboard_wrap">
+        <div id="container">
+            <div id="logo">
+                <a href="/"><img src="/images/logo.png"></a>
             </div>
-            <div id="space" style="height: 5px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="button">
-                    <a id="button_link" href="./board/join">
-                        <div id="button_inner">
-                            <h2>Create Account</h2>
-                        </div>
-                    </a>
-                </div>
+            <div id="title">
+                <a href="/" style="color: #000;"><h2>SCHEDULER</h2></a>
             </div>
-            <div id="space" style="height: 5px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="button">
-                    <a id="button_link" class="hidden" onclick="fc1();">
-                        <div id="button_inner">
-                            <h2>떠든 사람</h2>
-                        </div>
-                    </a>
-                </div>
+        </div>
+        <div id="space" style="height: 5px;"></div>
+        <div id="container" style="height: 50px;">
+            <div id="button">
+                <a id="button_link" href="/board/login">
+                    <div id="button_inner">
+                        <h2>Log In</h2>
+                    </div>
+                </a>
             </div>
-            <div id="space" style="height: 5px;"></div>
-            <div id="createby" class="hide on">
-                <div id="createby_text">
+        </div>
+        <div id="space" style="height: 5px;"></div>
+        <div id="container" style="height: 50px;">
+            <div id="button">
+                <a id="button_link" href="/board/join">
+                    <div id="button_inner">
+                        <h2>Create Account</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="space" style="height: 5px;"></div>
+        <div id="container">
+            <div id="createby">
+                <a id="createby_title" class="hidden" onclick="fc1();"><h2>☆ 떠든 사람 ☆</h2></a>
+                <div id="createby_text" class="hide on">
                     <h2>나성민(반장)</h2>
                     <h2>이혜준</h2>
                     <h2>남지환</h2>
+                    <div id="puppy"><img src="/images/puppy.png"></div>
                 </div>
             </div>
         </div>
         <div id="tool">
-            <div id="eraser"><div id="eraser_handle"></div></div>
-            <div id="chalk">
-                <div id="chalk_white"></div>
-                <div id="chalk_blue"></div>
-                <div id="chalk_pink"></div>
+            <div id="magnet_bundle">
+                <div id="magnet" class="red"></div>
+                <div id="magnet" class="yellow"></div>
+                <div id="magnet" class="green"></div>
+                <div id="magnet" class="purple"></div>
+                <div id="magnet" class="sky"></div>
+            </div>
+            <div id="chalk_case">
+                <div id="chalk_vertical" class="white"></div>
+                <div id="chalk_vertical" class="blue"></div>
+                <div id="chalk_vertical" class="yellow"></div>
+                <div id="chalk_vertical" class="red"></div>
+                <div id="case"></div>
+            </div>
+            <div id="eraser">
+                <div id="eraser_body"><div id="eraser_handle"></div></div>
+            </div>
+            <div id="chalk_bundle">
+                <div id="chalk_horizontal" class="white"></div>
+                <div id="chalk_horizontal" class="blue"></div>
+                <div id="chalk_horizontal" class="pink" style="margin-right: 0;"></div>
+            </div>
+            <div id="eraser2">
+                <div id="eraser2_body"><div id="eraser2_handle"></div></div>
+                <div id="eraser2_base"></div>
             </div>
         </div>
     </div>
+    <div id="underlay"></div>
 </body>
 </html>

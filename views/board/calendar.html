@@ -41,7 +41,7 @@
             <div class="modal-content"> 
                 <span class="close-button">&times;</span> 
                 <h1 class="title">Create schedule</h1>
-                <h2 class="date_modify"></h2> 
+                <h2 class="date"></h2> 
                 <form id="schedule_form" action = "/board/schedule" method="post"> 
                     <textarea id= "date_area" name="date_area" required = required></textarea>
                     <textarea id = "text" name="message" placeholder="Test Message" required="required"></textarea> 
@@ -55,7 +55,7 @@
             <div class="modify-content"> 
                 <span class="close-modify">&times;</span> 
                 <h1 class="title">Modify schedule</h1>
-                <h2 class="date"></h2> 
+                <h2 class="date_modify"></h2> 
                 <form id="modify_form" action = "/board/modify" method="post"> 
                     <textarea id= "id_area_modify" name="id_area" required = required></textarea>
                     <textarea id = "text_modify" name="message" placeholder="Test Message" required="required"></textarea> 
@@ -93,6 +93,7 @@
         let text_modify = document.querySelector('#text_modify')
         let delete_form = document.querySelector('#delete_form')
         let id_area_modify = document.querySelectorAll('#id_area_modify')
+        let date_modify = document.querySelector('.date_modify')
 
 
         let setYear = document.querySelector('#year').innerHTML
@@ -159,7 +160,7 @@
 
 
         function create_schedule(e){
-            
+
             if(e.target.id === "p"){
                 return
             }
@@ -183,7 +184,7 @@
 
         function modify_schedule(e){
             id = this.className
-            date.innerHTML = this.parentNode.parentNode.className
+            date_modify.innerHTML = this.parentNode.parentNode.className
             modify.setAttribute('class','modify show-modify')
             text_modify.innerHTML = this.innerHTML
         }

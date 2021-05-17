@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/join.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/join.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="/js/join.js"></script>
     <title>Document</title>
 </head>
@@ -14,7 +15,7 @@
             <div id="space" style="height: 100px;"></div>
             <div id="container">
                 <div id="title">
-                    <a href="../main.html" style="color: #000;"><h2>SCHEDULER</h2></a>
+                    <a href="/" style="color: #000;"><h2>SCHEDULER</h2></a>
                 </div>
             </div>
             <div id="container">
@@ -24,40 +25,56 @@
             </div>
             <div id="space" style="height: 100px;"></div>
             <div id="container" style="height: 350px;">
-                <form id = "submit_form" action="/board/join_success" method = "post">
-                    <input id="input_text" type="text" placeholder="ID" name="userid">
-                    <p id = 'userid_check'></p>
+                <div id="img_box">
+                    <div id="point_1"><img src="/images/point.png"></div>
+                    <div id="point_2"><img src="/images/point.png"></div>
+                </div>
+                <form id="login_form" action="/board/join_success" method="POST">
+                    <input id="input_text" class="userid" name="userid" type="text" placeholder="ID">
+                    <p id="check_msg" class="userid_msg" style="top: 400px;"></p>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="password" placeholder="PASSWORD" name="userpw">
+                    <input id="input_text" class="userpw" name="userpw" type="text" placeholder="PASSWORD">
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="password" placeholder="PASSWORD_CHECK" name="userpw_check">
+                    <input id="input_text" class="userpw_check" name="userpw_check" type="text" placeholder="PASSWORD_CHECK">
+                    <p id="check_msg" class="userpw_msg" style="top: 500px;"></p>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="NAME" name=username>
+                    <input id="input_text" class="username" name="username" type="text" maxlength="10" placeholder="NAME">
                     <div id="space" style="height: 10px;"></div>
                     <div id="radio_box">
-                        <input type="radio" checked="checked" name="gender" value="0"><span id="radio_text">Male</span>
-                        <input type="radio" name = "gender"><span id="radio_text" value="1">Female</span>
+                        <input class="gender" name="gender" type="radio" value="0" checked="checked"><span id="radio_text">Male</span>
+                        <input class="gender" name="gender" type="radio" value="1"><span id="radio_text">Female</span>
                     </div>
                     <div id="space" style="height: 10px;"></div>
-                    <input id="input_text" type="text" placeholder="E-MAIL" name=useremail>
+                    <input id="input_text" class="useremail" name="useremail" type="text" placeholder="E-MAIL">
                     <div id="space" style="height: 10px;"></div>
                     <div id="image_text">IMAGE UPLOAD</div>
-                    <input id="input_image" type="file" name="userimage">
+                    <input id="input_image" name="img" type="file">
+                    <div id="space" style="height: 20px;"></div>
+                    <div id="container" style="height: 50px;">
+                        <div id="long_button">
+                            <a id="button_link" class="login_submit">
+                                <div id="button_inner">
+                                    <h2>Sign In</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p id="check_msg" class="error_msg" style="top: 820px; margin-left: 200px; font-size: 20px; font-weight: bold; color: red;"></p>
                 </form>
             </div>
-            <div id="space" style="height: 20px;"></div>
-            <div id="container" style="height: 50px;">
-                <div id="long_button">
-                    <a id="button_link">
-                        <div id="button_inner">
-                            <h2>Sign In</h2>
-                        </div>
-                    </a>
+            <div id="tool">
+                <div id="eraser">
+                    <div id="eraser_body"><div id="eraser_handle"></div></div>
+                </div>
+                <div id="chalk_bundle">
+                    <div id="chalk_horizontal" class="white"></div>
+                    <div id="chalk_horizontal" class="blue"></div>
+                    <div id="chalk_horizontal" class="pink" style="margin-right: 0;"></div>
                 </div>
             </div>
-            <div id="space" style="height: 200px;"></div>
+            <div id="space" style="height: 170px;"></div>
         </div>
+        <div id="space" style="height: 70px;"></div>
     </div>
-    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </body>
 </html>

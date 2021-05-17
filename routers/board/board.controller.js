@@ -3,6 +3,7 @@ const{sequelize, User, Schedule} = require('../../models')
 let calendar = (req, res)=>{
     month = parseInt(req.query.month)
     year = parseInt(req.query.year)
+    console.log(month, year)
     userid = req.session.uid
     isLogin = req.session.isLogin
     if (isNaN(month)){
@@ -156,6 +157,23 @@ let delete_data = async (req,res)=>{
     res.redirect(`/board/calendar?year=${dt.getFullYear}&month=${dt.getMonth}}`)
 }
 
+let userid_check = async (req,res)=>{
+    let userid = req.query.userid;
+    let check = false;
+    let result = await User.findOne({
+        where:{ userid }
+    })
+    if (result == undefined){
+        check = true;
+    } else{
+        check = false;
+    }
+    res.json({
+        login:check,
+        userid,
+    })
+}
+
 module.exports = {
     calendar,
     join,
@@ -166,5 +184,6 @@ module.exports = {
     schedule,
     get_data,
     modify,
-    delete_data
+    delete_data,
+    userid_check
 }

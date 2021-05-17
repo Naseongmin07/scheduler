@@ -59,10 +59,13 @@ a{
     border: 1px solid rgb(218, 218, 218);
     outline: none;
 }
-#userid_check{
-    margin-left: 200px
+#check_msg{
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 610px;
+    font-size: 15px;
+    letter-spacing: -1px;
 }
-
 #radio_box{
     width: 358px;
     height: 18px;
@@ -96,6 +99,7 @@ a{
     border: 1px solid #000;
     color: #f7b10a;
     background: rgba(0,0,0,.4);
+    cursor: pointer;
 }
 #long_button > #button_link:hover{
     color: #fff;
@@ -107,4 +111,83 @@ a{
     width: 395px;
     height: 45px;
     border: 1px solid #c77e19;
+}
+
+#welcome_text{
+    text-align: center;
+}
+#welcome_text > h3 > span{
+    color: #f7b10a;
+}
+
+/* 꾸미기 */
+#point_1{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 340px;
+    margin-left: 150px;
+    z-index: 1;
+}
+#point_1 > img{
+    resize: both;
+    width: 100%;
+    z-index: 1;
+}
+#point_2{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 680px;
+    margin-left: 590px;
+}
+#point_2 > img{
+    resize: both;
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+#tool{
+    position: absolute;
+    top: 910px;
+}
+
+#eraser > #eraser_body{
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    top: -15px;
+    margin-left: 250px;
+    float: left;
+    background: rgb(255, 165, 0);
+    border-radius: 3px;
+}
+#eraser > #eraser_body > #eraser_handle{
+    width: 10px;
+    height: 20px;
+    margin: 0 auto;
+    background: rgb(80, 33, 0);;
+}
+
+#chalk_bundle{
+    width: 120px;
+    margin-left: 450px;
+}
+#chalk_bundle > #chalk_horizontal{
+    width: 30px;
+    height: 5px;
+    margin-right: 15px;
+    border-radius: 30px;
+}
+#chalk_bundle > .white{
+    float: left;
+    background: #fff;
+}
+#chalk_bundle > .blue{
+    float: left;
+    background: rgb(0, 117, 250);
+}
+#chalk_bundle > .pink{
+    float: right;
+    background: pink;
 }
