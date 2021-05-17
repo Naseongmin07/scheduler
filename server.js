@@ -5,11 +5,12 @@ const router = require('./routers/index')
 const {sequelize} = require('./models')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const cors = require('cors')
 
 nunjucks.configure('views',{
     express: app
 })
-
+app.use(cors());
 app.use(session({
     secret:'aaa',
     resave:false,

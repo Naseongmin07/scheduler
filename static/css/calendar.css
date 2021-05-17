@@ -88,8 +88,10 @@ table{
     background: lightgrey;
 }
 
+
+
 #calander>tr>td>span{
-    height: 100%;
+    /*height: 100%;*/
     display: block;
     text-align: right;
     padding: 5px 6px 0 0;
@@ -108,6 +110,11 @@ table{
 
 #box_day:hover{
     background: rgb(178, 199, 137)
+}
+
+#box_day>p{
+    background: yellow;
+    height: 81%;
 }
 
 h1{ 
@@ -219,3 +226,85 @@ textarea{
     transform: scale(1.0); 
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; 
 } 
+
+
+
+/*************************************************************************/
+
+
+
+#id_area_modify{
+    display:none;
+}
+
+
+#submit_modify{ 
+    width: 127px; 
+    height: 48px; 
+    text-align: center; 
+    border: none; 
+    margin-top: 20px; 
+    cursor: pointer; 
+} 
+#submit_modify:hover{ 
+    color: #fff; 
+    background-color: #216282; 
+    opacity: 0.9; 
+} 
+#cancel_modify { 
+    width: 127px; height: 48px; 
+    text-align: center; 
+    border: none; 
+    margin-top: 20px; 
+    cursor: pointer; 
+} 
+#cancel_modify:hover{ 
+    color: #fff; 
+    background-color: #216282; 
+    opacity: 0.9; 
+}
+
+.modify { 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    visibility: hidden; 
+    transform: scale(1.1); 
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s; 
+} 
+.modify-content { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white; 
+    padding: 1rem 1.5rem; 
+    width: 500px; 
+    height: 350px; 
+    border-radius: 0.5rem; 
+} 
+.close-modify { 
+    float: right; 
+    width: 1.5rem; 
+    line-height: 1.5rem; 
+    text-align: center; 
+    cursor: pointer; 
+    border-radius: 0.25rem; 
+    background-color: lightgray; 
+} 
+.close-modify:hover { 
+    background-color: darkgray; 
+} 
+
+.show-modify { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: scale(1.0); 
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s; 
+} 
+/*************************************************/
+

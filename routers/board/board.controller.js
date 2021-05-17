@@ -103,12 +103,57 @@ let schedule = async (req,res)=>{
     let scheduledt = req.body.date_area
     let content = req.body.message
     let dataArray = scheduledt.split('-')
+    let month = dataArray[1]
     await Schedule.create({
         userid,
         scheduledt,
+        month,
         content,
     })
     res.redirect(`/board/calendar?year=${dataArray[0]}&month=${dataArray[1]}`)
+}
+
+let get_data = async (req,res)=>{
+    let userid = req.query.userid
+    let month = parseInt(req.query.month)
+    let result = await Schedule.findAll({
+        where:{
+            userid: userid,
+            month: month
+        }
+    })
+    res.json({result})
+}
+
+let modify = async (req,res)=>{
+
+    let id = req.body.id_area
+    let content = req.body.message
+    let result = await Schedule.findOne({
+        where:{id}
+    })
+    await Schedule.update({content},
+        {where :{id}}
+    )
+
+    dt = new Date(result.dataValues.scheduledt)
+    
+    res.redirect(`/board/calendar?year=${dt.getFullYear}&month=${dt.getMonth}}`)
+}
+
+let delete_data = async (req,res)=>{
+
+    let id = req.body.id_area
+    let result = await Schedule.findOne({
+        where:{id}
+    })
+    await Schedule.destroy({
+        where :{id}
+    })
+
+    dt = new Date(result.dataValues.scheduledt)
+    
+    res.redirect(`/board/calendar?year=${dt.getFullYear}&month=${dt.getMonth}}`)
 }
 
 module.exports = {
@@ -118,5 +163,8 @@ module.exports = {
     join_success,
     login_check,
     logout,
-    schedule
+    schedule,
+    get_data,
+    modify,
+    delete_data
 }

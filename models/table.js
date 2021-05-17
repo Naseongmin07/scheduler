@@ -63,8 +63,12 @@ class Schedule extends Sequelize.Model{
                 type:Sequelize.DATEONLY,
                 allowNull:false,
                 get: function(){
-                    return moment(this.getDataValue('userdt')).format('YYYY-MM-DD')
+                    return moment(this.getDataValue('scheduledt')).format('YYYY-MM-DD')
                 }
+            },
+            month:{
+                type: Sequelize.STRING(20),
+                allowNull:false
             },
             content:{
                 type: Sequelize.TEXT,
