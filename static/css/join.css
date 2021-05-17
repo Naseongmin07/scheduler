@@ -123,21 +123,27 @@ a{
 /* 꾸미기 */
 #point_1{
     position: absolute;
-    top: 330px;
-    margin-left: 140px;
+    width: 60px;
+    height: 60px;
+    top: 340px;
+    margin-left: 150px;
+    z-index: 1;
 }
 #point_1 > img{
     resize: both;
-    width: 30%;
+    width: 100%;
+    z-index: 1;
 }
 #point_2{
     position: absolute;
-    top: 660px;
-    margin-left: 565px;
+    width: 60px;
+    height: 60px;
+    top: 680px;
+    margin-left: 590px;
 }
 #point_2 > img{
     resize: both;
-    width: 30%;
+    width: 100%;
     transform: rotate(180deg);
 }
 
